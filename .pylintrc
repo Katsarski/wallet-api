@@ -15,6 +15,7 @@ disable=
     W0611, # Unused import
     W0104, # Statement seems to have no effect
     R0801, # Similar lines
+    C0304, # Final newline missing
     W0621, # Redefining name from outer scope
 
 [FORMAT]
