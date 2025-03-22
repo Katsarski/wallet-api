@@ -14,12 +14,21 @@ This test suite verifies the functionality of the POST /wallet/{walletId}/transa
 - git clone <repository_url>
 - cd <cloned_repo_dir>
 
-**Create a virtual environment (optional but recommended):**
-- python -m venv venv
-- source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+**Create a virtual environment and install dependencies:**
 
-**Install dependencies:**
-- pip install -r requirements.txt
+    # Linux/MacOS
+    - python3.# (tested and developed on 3.13) installed
+    - run `apt install python3.13-venv` if not already there
+    - run `python3 -m venv .venv`
+    - run `source .venv/bin/activate`
+    - run `pip install -r requirements.txt`
+
+    # Windows
+    - python3.# (tested and developed on 3.13) installed
+    - run `python -m venv .venv`
+    - run `.venv\Scripts\activate`  # On PowerShell or Command Prompt
+    - run `pip install -r requirements.txt`
+    - Optional (might be required): run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process`
 
 ##  Running tests
 

@@ -1,6 +1,6 @@
 import pytest
-
-from AQA_Challenge import config
+import requests
+import config
 
 """This module provides fixtures for authentication"""
 

@@ -1,7 +1,7 @@
 import time
 
 import requests
-from AQA_Challenge import config
+import config
 
 
 def wait_for_transaction_status_update(wallet_id, transaction_id, auth_headers, poll_interval = 1, timeout=30):

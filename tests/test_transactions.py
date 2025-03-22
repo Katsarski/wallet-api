@@ -1,8 +1,7 @@
 import requests
 import random
-
-from AQA_Challenge import config
-from AQA_Challenge.common import helpers
+import config
+from common import helpers
 
 """This module provides tests for wallet transactions."""
 

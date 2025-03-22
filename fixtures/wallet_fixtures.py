@@ -2,8 +2,7 @@ import random
 import uuid
 import pytest
 import requests
-
-from AQA_Challenge import config
+import config
 
 """This module provides fixtures for wallet related operations"""
 
