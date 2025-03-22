@@ -57,7 +57,6 @@ This test suite verifies the functionality of the POST /wallet/{walletId}/transa
 - Create a utility module to centralize API request logic, making it reusable and easier to maintain
 - Use a separate module or files to store test data
 - Add logging to log events such as which endopiunt is being called along with the outcomes 
-- Implement linter checks for code quality
 - Run tests in CI/CD pipeline
 - Extend the coverage to cover the other endpoints further - ideally introduce E2E tests involving more endpoints in a certain scenario to cover complete user flows
 - Introduce non-functional testing like performance and security
