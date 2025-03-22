@@ -15,7 +15,7 @@ def auth_headers():
     }
 
 def _authenticate():
-    """Fetch a valid authentication token by logging in."""
+    """Fetch a valid authentication token by logging in"""
     headers = {
         "X-Service-Id": config.X_SERVICE_ID,
         "Content-Type": "application/json"
