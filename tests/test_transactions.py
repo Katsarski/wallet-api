@@ -373,7 +373,5 @@ def test_transaction_timeout(wallet_id, auth_headers):
     assert wallet_response.status_code == 200, "Failed to fetch wallet data"
     wallet_data = wallet_response.json()
     assert len(wallet_data["currencyClips"]) == 0, (
-        "Wallet balance should remain unchanged after denied transaction"
-    )
-    
+        "Wallet balance should remain unchanged after denied transaction")
     
