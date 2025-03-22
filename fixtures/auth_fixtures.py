@@ -1,8 +1,8 @@
+"""This module provides fixtures for authentication"""
+
 import pytest
 import requests
 import config
-
-"""This module provides fixtures for authentication"""
 
 @pytest.fixture(scope="session")
 def auth_headers():
@@ -23,7 +23,8 @@ def _authenticate():
     response = requests.post(
         f"{config.BASE_URL}/user/login",
         json={"username": "<username>", "password": "<password>"},
-        headers=headers
+        headers=headers,
+        timeout=config.DEFAULT_API_TIMEOUT
     )
     assert response.status_code == 200, "Authentication failed"
     return response.json().get("token")

@@ -38,6 +38,7 @@ This test suite verifies the functionality of the POST /wallet/{walletId}/transa
 ## Dependencies
 - pytest
 - requests
+- pylint
 
 **To install dependencies:**
 - pip install pytest requests.txt
@@ -45,7 +46,7 @@ This test suite verifies the functionality of the POST /wallet/{walletId}/transa
 ## Assumptions
 
 - The authentication system is functional and returns a valid token
-- Invalid transactions (e.g., negative amounts, unknown currencies) return 400 Bad Request
+- Invalid payloads (e.g., negative amounts, unknown currencies) return 400 Bad Request
 
 
 ## Notes
@@ -53,7 +54,6 @@ This test suite verifies the functionality of the POST /wallet/{walletId}/transa
 ### **Future Enhancements May Include:**
 - Randomize the data even further (test with different currencies/amounts)
 - Introduce environment-specific configurations that shall change based on the environment used
-- Introduce more helper functions/fixtures to generate an account with initial funds to avoid doing that setup in each test that needs this
 - Create a utility module to centralize API request logic, making it reusable and easier to maintain
 - Use a separate module or files to store test data
 - Add logging to log events such as which endopiunt is being called along with the outcomes 
@@ -72,6 +72,7 @@ This test suite verifies the functionality of the POST /wallet/{walletId}/transa
 - Test the token encryption mechanism for security
 - Test that regenerated tokens properly invalidate old tokens (old token cannot be reused)
 - Test that expired tokens cannot be reused - correct error code returned (e.g., 401)
+- Test how the transactions behave if the servive is put under load
 
 ## LLM used:
 - Copilot GPT-4o (.gitignore, requirements.txt, generic README.md and TestPlan.txt structure)

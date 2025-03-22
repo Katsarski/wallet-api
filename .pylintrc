@@ -1,0 +1,30 @@
+[MASTER]
+# Control the maximum number of characters on a single line.
+max-line-length=100
+init-hook='import sys; sys.path.append("./")'
+# Specify the output format. You can choose from text, colorized, json, etc.
+output-format=colorized
+
+# Disable the checks for specific warnings.
+disable=
+    R0903,  # Too few public methods
+    W0201,  # Attribute defined outside __init__
+    C0303,  # Trailing whitespace
+    W1203,  # Use lazy % formatting in logging functions
+    W1510, # 'subprocess.run' used without explicitly defining the value for 'check'
+    W0104, # Statement seems to have no effect
+    R0801, # Similar lines
+    W0621, # Redefining name from outer scope
+
+[FORMAT]
+# Set the maximum allowed number of characters on a single line.
+max-line-length=100
+
+[MESSAGES CONTROL]
+# Enable or disable specific messages.
+enable=
+    C0301,  # Line too long
+    C0103,  # Variable name doesn't use snake_case
+    R0901,  # Too many methods
+    C0111,  # Missing docstring in public module
+    W1201   # Logging format (message not found in format string)
