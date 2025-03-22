@@ -12,6 +12,7 @@ disable=
     C0303,  # Trailing whitespace
     W1203,  # Use lazy % formatting in logging functions
     W1510, # 'subprocess.run' used without explicitly defining the value for 'check'
+    W0611, # Unused import
     W0104, # Statement seems to have no effect
     R0801, # Similar lines
     W0621, # Redefining name from outer scope

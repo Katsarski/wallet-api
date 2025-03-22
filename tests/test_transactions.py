@@ -376,3 +376,4 @@ def test_transaction_timeout(wallet_id, auth_headers):
         "Wallet balance should remain unchanged after denied transaction"
     )
     
+    
