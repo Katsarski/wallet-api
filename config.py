@@ -6,4 +6,4 @@ but can be further extended if needbe
 """
 
 BASE_URL = "https://challenge.test.local/challenge/api/v1"
-X_SERVICE_ID = os.getenv("X_SERVICE_ID", "<default_service_id>")
+X_SERVICE_ID = os.getenv("X_SERVICE_ID")
