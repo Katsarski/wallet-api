@@ -45,6 +45,9 @@ This test suite verifies the functionality of the POST /wallet/{walletId}/transa
 - Randomize the data even further (test with different currencies/amounts)
 - Introduce environment-specific configurations that shall change based on the environment used
 - Introduce more helper functions/fixtures to generate an account with initial funds to avoid doing that setup in each test that needs this
+- Create a utility module to centralize API request logic, making it reusable and easier to maintain
+- Use a separate module or files to store test data
+- Add logging to log events such as which endopiunt is being called along with the outcomes 
 - Implement linter checks for code quality
 - Run tests in CI/CD pipeline
 - Extend the coverage to cover the other endpoints further - ideally introduce E2E tests involving more endpoints in a certain scenario to cover complete user flows
@@ -61,4 +64,5 @@ This test suite verifies the functionality of the POST /wallet/{walletId}/transa
 - Test that regenerated tokens properly invalidate old tokens (old token cannot be reused)
 - Test that expired tokens cannot be reused - correct error code returned (e.g., 401)
 
--- LLM used: Copilot GPT-4o (.gitignore, requirements.txt, generic README.md and TestPlan.txt structure)
+## LLM used:
+- Copilot GPT-4o (.gitignore, requirements.txt, generic README.md and TestPlan.txt structure)

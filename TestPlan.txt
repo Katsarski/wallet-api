@@ -1,120 +1,121 @@
-### TESTPLAN
+TESTPLAN
 
-#### **Project Name**: Wallet API Testing Suite  
-#### **Purpose**:  
+Project Name: Wallet API Testing Suite  
+
+Purpose:  
 This test plan outlines the test cases implemented to validate the functionality of the Wallet API, focusing on wallet transactions, balance management, and error handling. The plan also includes unimplemented example test cases prioritized for future development.
 
 ---
 
-### **Implemented Test Cases**
+Implemented Test Cases
 
-#### **1. Test Wallet Initialization and Initial Transactions**
-- **Description**: Verifies that a newly created wallet is empty and that currency clips are created after the first credit transaction in each currency.
-- **Assertions**:
+1. Test Wallet Initialization and Initial Transactions
+Description: Verifies that a newly created wallet is empty and that currency clips are created after the first credit transaction in each currency.
+Assertions:
   - Wallet starts with no currency clips.
   - Currency clips are created for each new currency after credit transactions.
   - Transactions are processed successfully with the correct status and outcome.
-- **Priority**: High
+Priority: High
 
 ---
 
-#### **2. Test Credit Transaction Exceeding Bank Balance**
-- **Description**: Ensures that a credit transaction exceeding the bank/third-party service balance is denied.
-- **Assertions**:
+2. Test Credit Transaction Exceeding Bank Balance
+Description: Ensures that a credit transaction exceeding the bank/third-party service balance is denied.
+Assertions:
   - First transaction within the bank balance is approved.
   - Second transaction exceeding the bank balance is denied.
-- **Priority**: High
+Priority: High
 
 ---
 
-#### **3. Test Debit Transaction Exceeding Wallet Balance**
-- **Description**: Verifies that a debit transaction exceeding the wallet balance is denied.
-- **Assertions**:
+3. Test Debit Transaction Exceeding Wallet Balance
+Description: Verifies that a debit transaction exceeding the wallet balance is denied.
+Assertions:
   - Debit transaction within the wallet balance is approved.
   - Debit transaction exceeding the wallet balance is denied.
-- **Priority**: High
+Priority: High
 
 ---
 
-#### **4. Test Concurrent Transactions**
-- **Description**: Tests the system's ability to handle multiple transactions sequentially and ensures they are processed correctly.
-- **Assertions**:
+4. Test Concurrent Transactions
+Description: Tests the system's ability to handle multiple transactions sequentially and ensures they are processed correctly.
+Assertions:
   - All transactions are processed with the correct status and outcome.
   - Wallet balance reflects the cumulative effect of all transactions.
-- **Priority**: Medium
+Priority: Medium
 
 ---
 
-#### **5. Test Large Volume of Transactions**
-- **Description**: Validates the system's ability to handle a high number of transactions in a short period.
-- **Assertions**:
+5. Test Large Volume of Transactions
+Description: Validates the system's ability to handle a high number of transactions in a short period.
+Assertions:
   - All transactions are processed successfully.
   - No performance degradation or errors occur during high-volume processing.
-- **Priority**: Medium
+Priority: Medium
 
 ---
 
-#### **6. Test Invalid Transaction Payloads**
-- **Description**: Ensures that invalid payloads are rejected with appropriate error messages.
-- **Assertions**:
+6. Test Invalid Transaction Payloads
+Description: Ensures that invalid payloads are rejected with appropriate error messages.
+Assertions:
   - Transactions with invalid parameters (e.g., negative amounts, unsupported currencies, missing fields) return a `400` status code.
   - Wallet balance remains unchanged after invalid transactions.
-- **Priority**: High
+Priority: High
 
 ---
 
-#### **7. Test Transaction Timeout**
-- **Description**: Verifies that transactions in the "pending" state are automatically denied after 30 minutes.
-- **Assertions**:
+7. Test Transaction Timeout
+Description: Verifies that transactions in the "pending" state are automatically denied after 30 minutes.
+Assertions:
   - Transactions start in the "pending" state.
   - Transactions are denied with a "finished" status and "denied" outcome after 30 minutes.
   - Wallet balance remains unchanged after the denied transaction.
-- **Priority**: High
+Priority: High
 
 ---
 
-### **Unimplemented Example Test Cases**
+Unimplemented Example Test Cases
 
-#### **1. Test Unauthorized Access**
-- **Description**: Verifies that requests without a valid Bearer token are rejected.
-- **Expected Behavior**:
+1. Test Unauthorized Access
+Description: Verifies that requests without a valid Bearer token are rejected.
+Expected Behavior:
   - Requests without a Bearer token return a `401 Unauthorized` status.
   - Requests with an invalid token return a `403 Forbidden` status.
-- **Priority**: High
+Priority: High
 
 ---
 
-#### **2. Test Currency Conversion**
-- **Description**: Ensures that transactions involving currency conversion are processed correctly.
-- **Expected Behavior**:
+2. Test Currency Conversion
+Description: Ensures that transactions involving currency conversion are processed correctly.
+Expected Behavior:
   - Transactions in a different currency are converted to the wallet's base currency.
   - Conversion rates are applied correctly.
-- **Priority**: Medium
+Priority: Medium
 
 ---
 
-#### **3. Test Transaction Reversal**
-- **Description**: Verifies that a transaction can be reversed and that the wallet balance is updated accordingly.
-- **Expected Behavior**:
+3. Test Transaction Reversal
+Description: Verifies that a transaction can be reversed and that the wallet balance is updated accordingly.
+Expected Behavior:
   - A valid transaction reversal request updates the wallet balance by reversing the original transaction's effect.
   - Reversal is only allowed for transactions with a "finished" status and an "approved" outcome.
   - Reversal requests for invalid or already reversed transactions return an appropriate error (e.g., `400 Bad Request` or `404 Not Found`).
-- **Priority**: High
+Priority: High
 
 ---
 
-#### **4. Test High-Frequency Requests**
-- **Description**: Tests the system's behavior when multiple requests are sent in rapid succession.
-- **Expected Behavior**:
+4. Test High-Frequency Requests
+Description: Tests the system's behavior when multiple requests are sent in rapid succession.
+Expected Behavior:
   - API handles high-frequency requests without errors or performance degradation.
   - Rate-limiting is enforced if applicable.
-- **Priority**: Medium
+Priority: Medium
 
 ---
 
-#### **5. Test Partial Transaction Rollback**
-- **Description**: Ensures that if a transaction partially fails (e.g., due to an external service error), the wallet state remains consistent.
-- **Expected Behavior**:
+5. Test Partial Transaction Rollback
+Description: Ensures that if a transaction partially fails (e.g., due to an external service error), the wallet state remains consistent.
+Expected Behavior:
   - Partial failures do not affect the wallet balance.
   - Appropriate error messages are returned for failed transactions.
-- **Priority**: High
+Priority: High

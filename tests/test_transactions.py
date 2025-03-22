@@ -1,11 +1,10 @@
-import pytest
 import requests
-import uuid
 import random
-import time
 
 from AQA_Challenge import config
 from AQA_Challenge.common import helpers
+
+"""This module provides tests for wallet transactions."""
 
 def test_wallet_initialization_and_initial_transactions(wallet_id, auth_headers):
     """Test wallet initialization and multiple currency transactions."""

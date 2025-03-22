@@ -5,6 +5,7 @@ import requests
 
 from AQA_Challenge import config
 
+"""This module provides fixtures for wallet related operations"""
 
 @pytest.fixture
 def wallet_id():

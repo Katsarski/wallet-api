@@ -2,6 +2,7 @@ import pytest
 
 from AQA_Challenge import config
 
+"""This module provides fixtures for authentication"""
 
 @pytest.fixture(scope="session")
 def auth_headers():
@@ -19,11 +20,10 @@ def _authenticate():
         "X-Service-Id": config.X_SERVICE_ID,
         "Content-Type": "application/json"
     }
-    # response = requests.post(
-    #     f"{config.BASE_URL}/user/login",
-    #     json={"username": "<username>", "password": "<password>"},
-    #     headers=headers
-    # )
-    # assert response.status_code == 200, "Authentication failed"
-    # return response.json().get("token")
-    return "dummy_token"
+    response = requests.post(
+        f"{config.BASE_URL}/user/login",
+        json={"username": "<username>", "password": "<password>"},
+        headers=headers
+    )
+    assert response.status_code == 200, "Authentication failed"
+    return response.json().get("token")
