@@ -1,0 +1,29 @@
+# Python-related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+
+# Test-related
+.junit_cache/
+pytest_cache/
+.coverage
+*.cover
+
+# Dependency files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
